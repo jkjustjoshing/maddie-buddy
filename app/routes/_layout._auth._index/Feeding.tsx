@@ -67,7 +67,7 @@ export const Feeding = () => {
               </div>
               <Form
                 onSubmit={() => cancelTimer(t)}
-                classNmae="feedingItem-delete"
+                className="feedingItem-delete"
               >
                 <button className="outline">🗑️</button>
               </Form>
