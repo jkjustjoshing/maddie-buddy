@@ -39,6 +39,7 @@ export default function Index() {
 
     const startTime = new Date(endTime.getTime());
     startTime.setTime(
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
       startTime.getTime() - parseFloat(duration as any) * 60000
     );
 
