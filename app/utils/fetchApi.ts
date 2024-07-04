@@ -5,7 +5,7 @@ export const fetchApi = async (path: string, options: RequestInit = {}) => {
     mode: 'cors',
     ...options,
     headers: {
-      Authorization: 'Token ' + localStorage.getItem(KEY),
+      Authorization: 'Token ' + localStorage.getItem(KEY)?.trim(),
       ...(options.headers || {})
     }
   }
