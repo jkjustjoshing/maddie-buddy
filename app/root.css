@@ -1,0 +1,80 @@
+html,
+body {
+  width: 100%;
+  min-height: 100dvh;
+}
+
+h2 {
+  font-size: 2rem;
+  text-align: center;
+}
+
+header {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+
+nav li {
+  padding-block: 0.2rem;
+}
+
+section {
+  margin-inline: calc(-1 * var(--pico-block-spacing-horizontal));
+}
+
+form,
+.feedingItem {
+  padding-inline: var(--pico-block-spacing-horizontal);
+  padding-block: var(--pico-block-spacing-vertical);
+}
+
+[data-error] {
+  background: rgba(255, 0, 0, 0.3);
+}
+.error,
+.error pre {
+  background: rgba(100, 0, 0);
+  color: white;
+}
+
+pre {
+  padding: 1rem 0.5rem;
+}
+
+button + button {
+  margin-left: 0.5rem;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+.feedingItem {
+  display: grid;
+  gap: 0.5rem;
+  grid-template-areas: "time delete" "amount amount";
+  grid-template-columns: 1fr auto;
+  background: rgba(0, 255, 0, 0.2);
+}
+.feedingItem:nth-child(even) {
+  background: rgba(50, 200, 230, 0.2);
+}
+
+.feedingItem-time {
+  grid-area: time;
+}
+.feedingItem-delete {
+  grid-area: delete;
+}
+.feedingItem-amount {
+  grid-area: amount;
+}
+
+.feedingItem form,
+.feedingItem fieldset {
+  margin: 0;
+  padding: 0;
+  display: inline-block;
+}

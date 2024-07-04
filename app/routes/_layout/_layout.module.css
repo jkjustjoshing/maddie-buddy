@@ -1,0 +1,5 @@
+.header {
+  background: #fea9b7;
+  --pico-block-spacing-vertical: 0.5rem;
+  --pico-element-spacing-vertical: 0;
+}
