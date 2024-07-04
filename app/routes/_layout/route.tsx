@@ -49,6 +49,9 @@ export default function Layout() {
             <li>
               <Link to="/chart">Charts</Link>
             </li>
+            <li>
+              <Link to="/login">Login</Link>
+            </li>
           </ul>
         </nav>
       </header>
