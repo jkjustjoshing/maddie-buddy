@@ -1,9 +1,4 @@
-import {
-  ClientLoaderFunctionArgs,
-  Link,
-  Outlet,
-  redirect,
-} from "@remix-run/react";
+import { Link, Outlet } from "@remix-run/react";
 import styles from "./_layout.module.css";
 import type { MetaFunction, LinksFunction } from "@remix-run/node";
 
