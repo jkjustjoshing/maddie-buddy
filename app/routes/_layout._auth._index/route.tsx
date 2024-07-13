@@ -64,6 +64,7 @@ export default function Index() {
           <input
             placeholder="In milliliters"
             type="number"
+            inputMode="decimal"
             name="amount"
             id="amount"
             required
@@ -72,6 +73,7 @@ export default function Index() {
           <input
             placeholder="In minutes (incl decimals)"
             type="number"
+            inputMode="decimal"
             name="duration"
             id="duration"
             step="any"

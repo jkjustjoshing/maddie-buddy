@@ -78,6 +78,7 @@ export const Feeding = () => {
                 <input
                   placeholder="Amount"
                   type="number"
+                  inputMode="decimal"
                   name="amount"
                   id={"feeding-amount-" + t.id}
                   required
