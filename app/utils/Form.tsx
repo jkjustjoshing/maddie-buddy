@@ -51,7 +51,12 @@ export const Form = ({
       </fieldset>
       {typeof children !== "function" && error ? (
         <div className="error">
-          There was an error: <pre>{error.stack}</pre>
+          There was an error:{" "}
+          <pre>
+            {error.message}
+            {"\n"}
+            {error.stack}
+          </pre>
         </div>
       ) : undefined}
     </form>

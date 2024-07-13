@@ -3,25 +3,8 @@ import { Feeding } from "./Feeding";
 import { FormEvent, useRef } from "react";
 import { fetchApiPost } from "~/utils/fetchApi";
 import { useQueryClient } from "react-query";
-
-const getLocalDateString = (date: Date) => {
-  const tzoffset = new Date().getTimezoneOffset() * 60000; //offset in milliseconds
-  const localISOTime = new Date(date.getTime() - tzoffset)
-    .toISOString()
-    .slice(0, 16);
-  return localISOTime;
-};
-
-const getDateFromLocalDateString = (dateStr: unknown) => {
-  if (typeof dateStr !== "string") {
-    return new Date();
-  }
-  const tzoffset = new Date().getTimezoneOffset() * 60000; //offset in milliseconds
-  const isoTime = new Date(dateStr + ":00Z");
-  isoTime.setTime(isoTime.getTime() + tzoffset);
-
-  return isoTime;
-};
+import { Sleep } from "./Sleep";
+import { getDateFromLocalDateString, getLocalDateString } from "~/utils/date";
 
 export default function Index() {
   const queryClient = useQueryClient();
@@ -56,6 +39,9 @@ export default function Index() {
 
   return (
     <div>
+      <section>
+        <Sleep />
+      </section>
       <section>
         <h2>Pumping</h2>
         <Form onSubmit={createPumping}>
