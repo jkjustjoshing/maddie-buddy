@@ -2,6 +2,7 @@ html,
 body {
   width: 100%;
   min-height: 100dvh;
+  background: var(--pico-card-sectioning-background-color);
 }
 
 h2 {

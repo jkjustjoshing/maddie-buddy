@@ -1,0 +1,14 @@
+.chartWrapper {
+  overflow-x: auto;
+  --today: #007700;
+  --past: #0000ff;
+  --background: #ffffff;
+}
+
+@media (prefers-color-scheme: dark) {
+  .chartWrapper {
+    --today: #b0f9b0;
+    --past: #eeeeff;
+    --background: var(--pico-card-sectioning-background-color);
+  }
+}

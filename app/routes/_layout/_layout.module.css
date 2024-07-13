@@ -3,3 +3,9 @@
   --pico-block-spacing-vertical: 0.5rem;
   --pico-element-spacing-vertical: 0;
 }
+
+@media (prefers-color-scheme: dark) {
+  .header {
+    background: #804751;
+  }
+}

@@ -7,6 +7,7 @@ import {
   XAxis,
   YAxis,
 } from "recharts";
+import styles from "./chart.module.css";
 
 type FeedingDataPoint = {
   start: string;
@@ -49,7 +50,7 @@ export function PercentFeedingBreakdown(props: {
   }, [props.data]);
 
   return (
-    <div style={{ overflowX: "auto" }}>
+    <div className={styles.chartWrapper}>
       <ResponsiveContainer minHeight={400} minWidth={700}>
         <LineChart width={100} height={100} data={byDate}>
           <CartesianGrid stroke="#ccc" />

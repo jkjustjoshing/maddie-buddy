@@ -7,6 +7,7 @@ import {
   XAxis,
   YAxis,
 } from "recharts";
+import styles from "./chart.module.css";
 
 type DataPoint = { x: Date; timeOfDay: number; y: number; cumulative: number };
 
@@ -77,7 +78,7 @@ export function Chart(props: {
   }, [props.data]);
 
   return (
-    <div style={{ overflowX: "auto" }}>
+    <div className={styles.chartWrapper}>
       <ResponsiveContainer minHeight={400} minWidth={700}>
         <LineChart width={100} height={100} id={"abc"}>
           <CartesianGrid stroke="#ccc" />
@@ -97,20 +98,29 @@ export function Chart(props: {
               3600 /
               24;
 
+            const strokeOpacity =
+              daysInPast === 0
+                ? 1
+                : (240 - Math.floor(Math.log(daysInPast * 10) * 50)) / 255;
+
+            if (strokeOpacity < 0) {
+              return null;
+            }
+
             return (
               <Line
                 dataKey="cumulative"
                 data={data}
                 name={name}
                 key={name}
-                dot={{ r: 5, strokeWidth: daysInPast === 0 ? 3 : 1 }}
-                stroke={daysInPast === 0 ? `#007700` : `#0000ff`}
-                strokeWidth={daysInPast === 0 ? 2 : 1}
-                strokeOpacity={
-                  daysInPast === 0
-                    ? 1
-                    : (240 - Math.floor(Math.log(daysInPast * 10) * 50)) / 255
-                }
+                dot={{
+                  r: 5,
+                  strokeWidth: daysInPast === 0 ? 3 : 1,
+                  fill: "var(--background)",
+                }}
+                stroke={daysInPast === 0 ? `var(--today)` : `var(--past)`}
+                strokeWidth={daysInPast === 0 ? 2 : 1.3}
+                strokeOpacity={strokeOpacity}
                 isAnimationActive={false}
               />
             );
